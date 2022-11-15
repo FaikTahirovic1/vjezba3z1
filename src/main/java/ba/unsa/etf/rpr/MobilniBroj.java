@@ -6,7 +6,8 @@ public class MobilniBroj extends TelefonskiBroj{
     private int mobilnaMreza;
     private String broj;
 
-    public MobilniBroj(int mobilnaMreza, String broj) {
+    public MobilniBroj(int mobilnaMreza, String broj) throws NeispravnaMobilnaMreza {
+        if(mobilnaMreza >70 || mobilnaMreza <60) throw new NeispravnaMobilnaMreza("Unesena mreža nije postojeća!");
         this.mobilnaMreza = mobilnaMreza;
         this.broj = broj;
     }
